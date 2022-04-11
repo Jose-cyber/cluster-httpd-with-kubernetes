@@ -1,23 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
-
 metadata:
-    name: webserver
+  name: webserver
 spec:
-    replicas: 10
-    selector:
-        matchLabels:
-            app: server
-    template:
-        metadata:
-             labels:
-                  app: server 
-        spec:
-             containers:
-                - name: webserver
-                  image: josecyber/webserver_httpd:latest
-                  ports:
-                  - containerPort: 80
+  replicas: 10
+  selector:
+    matchLabels:
+      app: server
+  template:
+    metadata:
+      labels:
+        app: server 
+    spec:
+      containers:
+      - name: webserver
+        image: josecyber/webserver_httpd:latest
+        ports:
+        - containerPort: 80
 
             
           
